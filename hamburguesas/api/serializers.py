@@ -8,7 +8,7 @@ class HamburguesaSerializer(serializers.ModelSerializer):
 
     def get_ingredientes(self, hamburguesa):
         lista = []  
-        url = "tarea-2-api-nacrur.herokuapp.com/ingrediente/"
+        url = "https://tarea2-api-nacrur.herokuapp.com/ingrediente/"
         for ingrediente in hamburguesa.ingredientes.all():
             dicto = dict()
             id = ingrediente.id
