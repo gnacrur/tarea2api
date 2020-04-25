@@ -26,7 +26,7 @@ SECRET_KEY = ')c5m(^yhoo!swlm0(jl_)v5j&*m6$5o2w968or+^19zu!#x05j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://tarea2-api-nacrur.herokuapp.com']
 
 
 # Application definition
@@ -126,7 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
+STATIC_ROOT  = os.path.join(BASE_DIR,"staticfiles")
 
 STATIC_URL = '/static/'
 
