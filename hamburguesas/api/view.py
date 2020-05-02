@@ -87,15 +87,11 @@ def api_delete_Hamburguesa_Ingrediente_view(request, idh, idi):
         return Response({"HTTP_404_NOT_FOUND"}, status = status.HTTP_404_NOT_FOUND)
     
     if request.method == "DELETE":
-        operation = ingrediente.delete()
+        hamburguesa.ingredientes.remove(ingrediente)
         data={}
-        if operation:
-            data["success"]="Eliminado exitosamente"
-            return Response(data = data, status = status.HTTP_200_OK)
-        else:
-            data["failure"] = "No se pudo eliminar"
-            return Response(data = data, status = status.HTTP_404_NOT_FOUND)
-    
+        data["success"]="Eliminado exitosamente"
+        return Response(data = data, status = status.HTTP_200_OK)
+        
     elif request.method == "PUT":
         hamburguesa.ingredientes.add(ingrediente)
         serializer = HamburguesaSerializer(hamburguesa)
